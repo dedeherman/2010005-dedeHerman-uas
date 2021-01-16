@@ -52,7 +52,7 @@ footer p i {
           <td>Nama Pemesan</td>
           <td> : </td>
           <td>
-            <input type="text" name="nama" id="nama">
+            <input type="text" name="nama" id="nama" required>
           </td>
         </tr>
   
@@ -60,7 +60,7 @@ footer p i {
           <td>Jumlah tiket</td>
           <td> : </td>
           <td>
-            <input type="number" name="jumlah" id="jumlah">
+            <input type="number" name="jumlah" id="jumlah" required>
           </td>
         </tr>
   
@@ -82,6 +82,8 @@ footer p i {
           <td>
             <select name="tujuan" id="tujuan">
               <option value="Bali">Bali</option>
+              <option value="Lombok">Lombok</option>
+              <option value="Papua">Papua</option>
             </select>
           </td>
         </tr>
@@ -145,10 +147,12 @@ footer p i {
         let tujuan=document.getElementById("tujuan").value
         let bagasi=document.querySelector("input[name=bagasi]:checked").value
         let nasuransi=document.querySelectorAll("input[name=asuransi]:checked")
-        let asuransi=[]
-        for(let a;a<nasuransi.length;a++){
-            asuransi.push(nasuransi[a].value)
-        }
+        var asuransi = document.querySelectorAll('input[name="asuransi"]:checked');
+            var txt_asuransi = "";
+            var i, biayaAsuransi;
+            for ( i = 0; i < asuransi.length; i++)
+                if (asuransi[i].checked) txt_asuransi += asuransi[i].value + ", <br>";
+            biayaAsuransi = i*50000
         let total_harga = harga * jml_tiket - (diskon) + biayaBagasi + biayaAsuransi
       
               document.write("***Data Pemesanan Tiket*** <br>");
