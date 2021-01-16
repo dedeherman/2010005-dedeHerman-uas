@@ -4,8 +4,114 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Tiket Pesawat</title>
+    <style>
+        body{
+            background-color: rgb(248, 86, 86);
+        }
+    </style>
 </head>
 <body>
-    
-</body>
-</html>
+    <h1>**Pemesanan Tiket Maskapai**</h1>
+    ===========================================
+    <form id="form">
+      <table>
+        <tr>
+          <td>Nama Pemesan</td>
+          <td> : </td>
+          <td>
+            <input type="text" name="nama" id="nama">
+          </td>
+        </tr>
+  
+        <tr>
+          <td>Jumlah tiket</td>
+          <td> : </td>
+          <td>
+            <input type="number" name="jumlah" id="jumlah">
+          </td>
+        </tr>
+  
+        <tr>
+          <td>Kelas</td>
+          <td> : </td>
+          <td>
+            <select name="kelas" id="kelas">
+              <option value="Ekonomi">Ekonomi</option>
+              <option value="Bisnis">Bisnis</option>
+              <option value="Eksekutif">Eksekutif</option>
+            </select>
+          </td>
+        </tr>
+  
+        <tr>
+          <td>Tujuan</td>
+          <td> : </td>
+          <td>
+            <select name="tujuan" id="tujuan">
+              <option value="Bali">Bali</option>
+            </select>
+          </td>
+        </tr>
+  
+        <tr>
+          <td>Bagasi</td>
+          <td> : </td>
+          <td>
+            <input type="radio" name="bagasi" value="5kg">5 kg
+            <input type="radio" name="bagasi" value="10kg">10 kg
+            <input type="radio" name="bagasi" value="15kg">15 kg
+          </td>
+        </tr>
+  
+        <tr>
+          <td>Asuransi</td>
+          <td> : </td>
+          <td>
+            <input type="checkbox" id="jiwa">Asuransi Jiwa
+          </td>
+        </tr>
+  
+        <tr>
+          <td></td>
+          <td></td>
+          <td>
+            <input type="checkbox" id="celaka">Asuransi Kecelakaan
+            <br>
+            <input type="checkbox" id="terlambat">Asuransi Keterlambatan
+          </td>
+        </tr>
+  
+      </table>
+      <br>
+      <br>
+      <input type="submit" value="Submit">
+      <button>Batal</button>
+    </form>
+  
+    </body>
+  
+  </html>
+  
+    <script>
+      document.getElementById("form").onsubmit = submit
+  
+      function submit()
+      {
+        let nama=document.getElementById("nama").value
+        let jumlah=document.getElementById("jumlah").value
+        let kelas=document.getElementById("kelas").value
+        let tujuan=document.getElementById("tujuan").value
+        let bagasi=document.querySelector("input[name=bagasi]:checked").value
+        let asuransi=document.querySelectorAll("input[name=asuransi]:checked").value
+        let total=document.querySelector("input[name=bagasi]:checked").value
+      
+              document.write("***Data Pemesanan Tiket*** <br>");
+              document.write(`Nama Pemesan: ${nama}<br>`);
+              document.write(`Jumlah : ${jumlah}<br>`);
+              document.write(`Kelas: ${kelas}<br>`);
+              document.write(`Tujuan: ${tujuan}<br>`);
+              document.write(`Bagasi: ${bagasi}<br>`);
+              document.write(`Asuransi: ${asuransi}<br>`);
+              document.write(`Total Harga: ${total}<br>`);
+      }
+    </script>
