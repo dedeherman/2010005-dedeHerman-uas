@@ -147,13 +147,13 @@ footer p i {
         let tujuan=document.getElementById("tujuan").value
         let bagasi=document.querySelector("input[name=bagasi]:checked").value
         let nasuransi=document.querySelectorAll("input[name=asuransi]:checked")
-        var asuransi = document.querySelectorAll('input[name="asuransi"]:checked');
-            var txt_asuransi = "";
-            var i, biayaAsuransi;
-            for ( i = 0; i < asuransi.length; i++)
-                if (asuransi[i].checked) txt_asuransi += asuransi[i].value + ", <br>";
-            biayaAsuransi = i*50000
-        let total_harga = harga * jml_tiket - (diskon) + biayaBagasi + biayaAsuransi
+        // var asuransi = document.querySelectorAll('input[name="asuransi"]:checked');
+        //     var txt_asuransi = "";
+        //     var i, biayaAsuransi;
+        //     for ( i = 0; i < asuransi.length; i++)
+        //         if (asuransi[i].checked) txt_asuransi += asuransi[i].value + ", <br>";
+        //     biayaAsuransi = i*50000
+        // let total_harga = harga * jml_tiket - (diskon) + biayaBagasi + biayaAsuransi
       
               document.write("***Data Pemesanan Tiket*** <br>");
               document.write(`Nama Pemesan: ${nama}<br>`);
@@ -162,6 +162,6 @@ footer p i {
               document.write(`Tujuan: ${tujuan}<br>`);
               document.write(`Bagasi: ${bagasi}<br>`);
               document.write(`Asuransi: ${asuransi}<br>`);
-              document.write(`Total Harga: ${total}<br>`);
+              // document.write(`Total Harga: ${total}<br>`);
       }
     </script>
